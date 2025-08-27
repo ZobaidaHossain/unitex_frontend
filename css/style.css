@@ -275,10 +275,14 @@ margin-right: 2rem;
         /* margin-top: 15px; */
         border-top: 1px solid #EEEEEE;
         padding-left: 2rem;
+        
     }
 }
 
 @media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav{
+        padding: 1rem;
+    }
     .sticky-top {
         margin-top: -34px;
     }
@@ -305,6 +309,83 @@ margin-right: 2rem;
     }
 }
 
+/* ===== 1024px tablet landscape refinements ===== */
+@media (max-width: 1024px) {
+
+    /* Compact bar + consistent height */
+    .navbar {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        height: var(--nav-height);
+       
+    }
+
+    /* Keep brand smaller so links fit */
+    .navbar .navbar-brand img.logo {
+        height: 36px;
+        /* was 44px */
+    }
+
+    /* Tighter link spacing + readable size */
+    .navbar .navbar-nav .nav-link {
+        margin-right: 1.5rem;
+        /* was 4rem */
+        padding: 12px 0;
+        /* was 20px */
+        font-size: 16px;
+        /* was 18px */
+        line-height: 1.1;
+    }
+
+    /* Keep content evenly spaced across */
+    .navbar .container,
+    .navbar .container-fluid {
+        gap: 0.75rem;
+    }
+
+    /* Logo + contact boxes: narrower margins/padding */
+    .logo_part {
+        margin-left: 1rem;
+        /* was 2rem */
+        padding: 3px;
+        border-radius: 6px;
+    }
+
+    .contact_part {
+        margin-right: 1rem;
+        /* was 2rem */
+        padding: 0.4rem 0.6rem;
+        font-size: 0.95rem;
+        line-height: 1;
+    }
+
+    /* Prevent the center nav from pushing out of view */
+    .navbar-collapse {
+        flex-grow: 0;
+        /* keep content width-controlled */
+    }
+
+    /* Make dropdowns usable on tighter width */
+    .dropdown-menu {
+        min-width: 12rem;
+    }
+
+    .dropdown-submenu>.dropdown-menu {
+        left: 95%;
+        /* slightly closer so it doesn't clip */
+    }
+
+    /* If you use .sticky-top, make its slide-in smoother at 1024 */
+    .sticky-top {
+        top: 0;
+        transition: .35s ease;
+    }
+}
+
+/* Optional: very tight tablets just below 1024 (safety net) */
+@media (max-width: 992px) {
+    /* your existing mobile rules already apply here */
+}
 
 .carousel-item::before {
     content: "";
